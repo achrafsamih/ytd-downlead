@@ -14,7 +14,7 @@ def result():
         try:
             yt = YouTube(video_url)
             video = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first()
-            video.download(output_path='/your/actual/file/path')  
+            video.download(output_path='download')  
             return 'تم تنزيل الفيديو بنجاح!'
         except Exception as e:
             return f'حدث خطأ: {str(e)}'
